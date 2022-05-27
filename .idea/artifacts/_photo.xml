@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="_photo">
+    <output-path>$PROJECT_DIR$/out/artifacts/_photo</output-path>
+    <root id="archive" name="_photo.jar">
+      <element id="module-output" name="EBU9" />
+    </root>
+  </artifact>
+</component>
