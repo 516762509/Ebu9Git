@@ -17,8 +17,12 @@ public class UnZipPic {
 
     public static void main(String[] args) {
 
-        String unzip = unzip("e:\\WEAVER\\ecology\\filesystem\\202205\\J\\94c88adc-aeb5-4d72-abe6-c1bcea914093.zip", "e:\\WEAVER\\ecology\\filesystem\\202205\\J\\94c88adc-aeb5-4d72-abe6-c1bcea914093.zip");
-        System.out.printf(unzip);
+    //    String unzip = unzip("e:\\WEAVER\\ecology\\filesystem\\202205\\J\\94c88adc-aeb5-4d72-abe6-c1bcea914093.zip", "e:\\WEAVER\\ecology\\filesystem\\202205\\J\\94c88adc-aeb5-4d72-abe6-c1bcea914093.zip");
+     //   System.out.printf(unzip);
+        String imgPath = "e:\\WEAVER\\ecology\\filesystem\\202205\\J\\94c88adc-aeb5-4d72-abe6-c1bcea914093.zip";
+        String image = imgPath.substring(imgPath.lastIndexOf("\\")+1);
+        String imgName2 = image.substring(0, image.indexOf(".",image.indexOf(".")));
+        System.out.println(imgName2);
 
     }
 
@@ -33,9 +37,9 @@ public class UnZipPic {
             Enumeration dir = zipfile.entries();
             while (dir.hasMoreElements()){
                 entry = (ZipEntry) dir.nextElement();
-
                 if( entry.isDirectory()){
                     name = entry.getName();
+                    System.out.println(name);
                     name = name.substring(0, name.length() - 1);
                     File fileObject = new File(zipDir+name);
                     fileObject.mkdir();
