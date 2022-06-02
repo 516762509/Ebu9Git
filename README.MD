@@ -38,3 +38,6 @@ DomeDevPoartlWebService:webservice接口
 <serviceClass>weaver.train.wenservice.DerPortalService</servicesClass>
 <implementationClass>weaver.train.wenservice.DerPortalServiceImpl</implementationClass>
 </service>
+
+
+hrmService 人员组织架构实现接口，需搭配定时任务使用，根据需求实现具体接口，
