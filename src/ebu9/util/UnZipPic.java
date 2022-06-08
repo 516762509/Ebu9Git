@@ -19,7 +19,7 @@ public class UnZipPic {
 
     //    String unzip = unzip("e:\\WEAVER\\ecology\\filesystem\\202205\\J\\94c88adc-aeb5-4d72-abe6-c1bcea914093.zip", "e:\\WEAVER\\ecology\\filesystem\\202205\\J\\94c88adc-aeb5-4d72-abe6-c1bcea914093.zip");
      //   System.out.printf(unzip);
-        String imgPath = "e:\\WEAVER\\ecology\\filesystem\\202205\\J\\94c88adc-aeb5-4d72-abe6-c1bcea914093.zip";
+        String imgPath = "";
         String image = imgPath.substring(imgPath.lastIndexOf("\\")+1);
         String imgName2 = image.substring(0, image.indexOf(".",image.indexOf(".")));
         System.out.println(imgName2);
