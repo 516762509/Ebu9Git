@@ -23,18 +23,17 @@ import java.util.Map;
  * 其中对象就是全部的上级路径地址
  *
  */
+
 public class DocdirdevopAction {
 
-    @Path("/getdata")
+    @Path("/getdataw")
     @GET
-    @Produces(MediaType.APPLICATION_JSON)
+    @Produces({"test/plain"})
     public String getData(@Context HttpServletResponse response, @Context HttpServletRequest request) {
         Map<String, Object> result = new HashMap<String, Object>();
         Map<String, Object> parms = ParamUtil.request2Map(request);
         try {
-            DomeDevPoartService devPortalService = new DomeDevPoartServiceImpl();
             result.put("api_status", 1);
-            result.put("data", devPortalService.getTestData(parms));
         } catch (Exception e) {
             e.printStackTrace();
             result.put("api_status", 0);

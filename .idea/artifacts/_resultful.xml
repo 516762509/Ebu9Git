@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="_resultful">
+    <output-path>E:/WEAVER/ecology/WEB-INF/lib</output-path>
+    <root id="archive" name="_resultful.jar">
+      <element id="module-output" name="EBU9" />
+    </root>
+  </artifact>
+</component>
