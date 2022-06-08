@@ -4,6 +4,7 @@ import com.alibaba.fastjson.JSONObject;
 import com.engine.common.util.ParamUtil;
 import com.engine.train.portal.service.DomeDevPoartService;
 import com.engine.train.portal.service.impl.DomeDevPoartServiceImpl;
+import weaver.general.BaseBean;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -16,21 +17,20 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class DomeDevpoartAction {
-
     @Path("/getdata")
     @GET
     @Produces(MediaType.APPLICATION_JSON)
     public String getData(@Context HttpServletResponse response, @Context HttpServletRequest request) {
         Map<String, Object> result = new HashMap<String, Object>();
         Map<String, Object> parms = ParamUtil.request2Map(request);
+        String name = request.getParameter("name");
+        new BaseBean().writeLog("name"+name);
+        result.put("name","nihao");
         try {
-            DomeDevPoartService devPortalService = new DomeDevPoartServiceImpl();
-            result.put("api_status", 1);
-            result.put("data", devPortalService.getTestData(parms));
+            result.put("api_status",1);
+            new BaseBean().writeLog("parms参数"+parms.get("name"));
         } catch (Exception e) {
             e.printStackTrace();
-            result.put("api_status", 0);
-            result.put("msg", e.getMessage());
         }
         return JSONObject.toJSONString(result);
     }
